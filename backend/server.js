@@ -12,13 +12,14 @@ app.use(cors());
 app.use(express.json());
 
 const uri = process.env.ATLAS_URI;
-mongoose.connect(uri, { useNewUrlParser:true, useCreateIndex:true, useUnifiedTopology:true });
+mongoose.connect(uri, { useNewUrlParser:true, useCreateIndex:true, useUnifiedTopology:true }).catch(err => console.log(err));
 const connection = mongoose.connection;
 
 connection.once('open', ()=>{
     console.log("mongooDb database connection established successfully!");  
-})
+});
 
 app.listen(port,()=>{
     console.log(`Listening at port: ${port}`);
-})
+});
+
