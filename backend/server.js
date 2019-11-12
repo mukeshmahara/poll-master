@@ -4,7 +4,7 @@ const cors = require("cors"); //Cors is an expres middle ware that enable cors, 
 
 const app = express();
 
-const port =process.env.PORT || 5000;
+const port =process.env.PORT || 5500;
 
 require('dotenv').config();
 
@@ -22,3 +22,4 @@ connection.once('open', ()=>{
 app.listen(port,()=>{
     console.log(`Listening at port: ${port}`);
 });
+
