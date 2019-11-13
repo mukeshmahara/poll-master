@@ -2,6 +2,13 @@ const router = require('express').Router();
 let PollQuestion = require('../models/pollquestions.model');
 
 
+router.route('/').get( (req, res) => {
+    PollQuestion.find()
+        .then( polls => res.json(polls) )
+        .catch( err => console.log('Error: '+ err ));
+});
+
+
 router.route('/add').post((req, res) => {
     const question = req.body.question;
     const option1 = req.body.option1;
