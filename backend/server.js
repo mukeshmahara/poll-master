@@ -12,6 +12,8 @@ app.use(cors());
 app.use(express.json());
 
 const PollRouter = require('./routes/poll');
+// const HomeRouter = require('../src')
+// app.use('/App',HomeRouter);
 app.use('/poll', PollRouter);
 
 const uri = process.env.ATLAS_URI;
