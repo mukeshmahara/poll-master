@@ -24,3 +24,14 @@
 .containerBox {
   /* min-height: 18rem; */
 }
+.options {
+  display:flex;
+  flex-direction: column;
+  margin: 0 2rem 0 2rem;
+}
+
+.option {
+  
+  display: flex;
+  justify-content: space-between
+}
