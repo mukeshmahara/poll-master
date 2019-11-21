@@ -1,35 +1,54 @@
 import React from 'react';
+import axios from 'axios';
+
 import PollContainer from './PollContainer'
 
 
-function Container() {
+class Container extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            polls: []
+        }
+    }
+    componentDidMount () {
+        axios.get('http://localhost:5500/poll/')
+            .then (response => {
+                this.setState({ polls: response.data })
+            })
+            .catch ( (err) => { console.log(err) })
+    }
+    render() {
     let optionArr = ["React", "Node", "Vue", "angular"];
 	let animeArr = ["One Piece", "Naruto"];
-
+        // console.log(this.state.polls)
     return (
-        <div>
+        <div className="ContainerSec">
 
             <div className="text-center">
-                <a>Home </a>
-                <a>Trending </a>
-                <a>Voted </a>
+                <a href="#">Home </a>
+                <a href="#">Trending </a>
+                <a href="#">Voted </a>
             </div>
             <hr />
             <div className="container-fluid">
                 <div className="row">
-                    <PollContainer options={optionArr} question="Fav Js" />
-                    <PollContainer options={animeArr} question="Fav Anime" />
-                    {/* <PollContainer options={optionArr} question="Fav Js" />
-                    <PollContainer options={optionArr} question="Fav Js" />
-                    <PollContainer options={optionArr} question="Fav Js" />
-                    <PollContainer options={optionArr} question="Fav Js" />*/}
-                    <PollContainer options={optionArr} question="Fav Js" /> 
+                    {
+                        this.state.polls.map(poll => {
+                            // console.log(poll)
+                            return(
+                                <PollContainer key={poll._id} question={poll.question} options={poll.options} />
+                            )
+                        })
+                    }
                     
                     
                 </div>
             </div>
         </div >
     )
+    }
 }
 
 export default Container;

@@ -11,18 +11,11 @@ router.route('/').get( (req, res) => {
 
 router.route('/add').post((req, res) => {
     const question = req.body.question;
-    const option1 = req.body.option1;
-    const option2 = req.body.option2;
-    const option3 = req.body.option3;
-    const option4 = req.body.option4;
-
+    const options = req.body.options;
 
     const newPoll = new PollQuestion ({
         question,
-        option1,
-        option2,
-        option3,
-        option4,
+        options
     });
 
     newPoll.save()

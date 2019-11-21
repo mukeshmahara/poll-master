@@ -1,29 +1,26 @@
-.App {
-  text-align: center;
+:root {
+  --darkBlue: #5E72EB;
+  --lightBlue: #2653AF;
+  --blue: #527CBC;
+  --brightBlue: #4AB1D8;
 }
 
-.App-logo {
-  height: 40vmin;
+.ContainerSec {
+  background-color: rgb(241, 241, 241);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.container {
+  background-color: #ffffff;
+  border-radius: 5px;
+  width: 22rem;
+  min-height: 15rem;
+}
+ 
+.question {
+  margin-top: 1rem;
+  font-family: 'Alata', sans-serif; 
 }
 
-.App-link {
-  color: #09d3ac;
-}
-
-.containerBox {
-  /* min-height: 18rem; */
-}
 .options {
   display:flex;
   flex-direction: column;
@@ -31,7 +28,39 @@
 }
 
 .option {
-  
-  display: flex;
-  justify-content: space-between
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
+  border: 2px solid var(--lightBlue);
+  border-radius: 5px;
+  padding: 0.3rem;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.option:hover {
+  background: var(--lightBlue);
+  color: white;
+}
+
+.option:active {
+  background: var(--brightBlue);
+  border-color: var(--brightBlue);
+  color: white;
+}
+
+.navbar {
+  background: var(--darkBlue) !important;
+  color: white;
+  font-family: 'Alata', sans-serif;
+}
+
+.heading {
+  font-family: 'Alata', sans-serif;
+  color: var(--lightBlue);
+}
+
+.fonticons {
+  background:none;
+  border: none;
+  outline: none !important;
 }

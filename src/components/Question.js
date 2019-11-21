@@ -2,9 +2,9 @@ import React from 'react';
 
 function Question(props) { 
     return (
-        <p>
+        <h6 className="question">
             {props.question}
-        </p>
+        </h6>
     );
 }
 
