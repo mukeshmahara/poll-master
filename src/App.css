@@ -48,6 +48,17 @@
   color: white;
 }
 
+.voteItem {
+  font-family: 'Ubuntu', sans-serif;
+  border: 2px solid var(--lightBlue);
+  border-radius: 5px;
+  margin: 1rem;
+  height: 2.3rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
 .navbar {
   background: var(--darkBlue) !important;
   color: white;

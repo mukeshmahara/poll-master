@@ -35,4 +35,11 @@ router.route('/vote/:pollId').post((req, res) => {
         })
 });
 
+
+router.route('/:id').get((req, res) => {
+    PollQuestion.findById(req.params.id)
+        .then (pollQuestion => res.json(pollQuestion))
+        .catch (err => res.status(400).json('Error: '+ err));
+});
+
 module.exports = router;

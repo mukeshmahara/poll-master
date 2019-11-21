@@ -3,7 +3,6 @@ import React from 'react';
 class Option extends React.Component {
 
     handleClick = () => {
-        console.log('click handled')
         this.props.handleVote(this.props.optionId)
     }
     render() {

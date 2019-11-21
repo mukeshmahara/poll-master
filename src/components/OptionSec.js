@@ -22,25 +22,28 @@ class OptionSec extends React.Component {
     }
 
     handleVote = (optionId) => {
-        console.log(optionId)
         let newOptions = this.props.options.map( (option) => {
             if(option._id === optionId) {
                 option.votes++
             }
             return option;
         });
-        console.log(newOptions)
+        // console.log(newOptions)
         let updatedPoll = {
             question: this.props.question,
             options: newOptions
         }
         // console.log(votedOption, 'found')
-        console.log(this.props.pollId)
+        // console.log(this.props.pollId)
         axios.post('http://localhost:5500/poll/vote/'+this.props.pollId, updatedPoll)
-            .then(res => console.log(res.data));
-
-
+            .then(res => {
+                console.log(res.data);
+                this.props.displayVotingPercentage()
+            });
     }
+
+
+
 	render() {
         return (
             <div className="options" >
