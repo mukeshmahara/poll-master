@@ -23,4 +23,16 @@ router.route('/add').post((req, res) => {
         .catch( err => res.status(400).json('Error: '+ err));
 });
 
+router.route('/vote/:pollId').post((req, res) => {
+    PollQuestion.findById(req.params.pollId)
+        .then(pollQuestion => {
+            pollQuestion.question = req.body.question;
+            pollQuestion.options = req.body.options;
+
+        pollQuestion.save()
+            .then(()=> res.json('Poll Updated'))
+            .catch( err => res.status(400).json('Error: ' + err ));
+        })
+});
+
 module.exports = router;
