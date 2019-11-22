@@ -137,7 +137,7 @@ class CreatePoll extends Component {
                     </form>
 
                 </div>
-
+                            
             </div>
         );
     }
