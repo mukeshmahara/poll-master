@@ -22,6 +22,7 @@ class OptionSec extends React.Component {
     }
 
     handleVote = (optionId) => {
+        this.props.toggleLoadVoting()
         let newOptions = this.props.options.map( (option) => {
             if(option._id === optionId) {
                 option.votes++
@@ -38,7 +39,8 @@ class OptionSec extends React.Component {
         axios.post('http://localhost:5500/poll/vote/'+this.props.pollId, updatedPoll)
             .then(res => {
                 console.log(res.data);
-                this.props.displayVotingPercentage()
+                this.props.toggleLoadVoting();
+                this.props.displayVotingPercentage();
             });
     }
 

@@ -53,10 +53,22 @@
   border: 2px solid var(--lightBlue);
   border-radius: 5px;
   margin: 1rem;
-  height: 2.3rem;
+  padding: 0.2rem 0 0.2rem 0;
+  /* height: 2.3rem; */
   display: flex;
   justify-content: start;
   align-items: center;
+}
+
+.loadingComp {
+  text-align: center;
+}
+
+.loadingGIF {
+  width: 5rem;
+  height: 5rem;
+  margin: auto;
+
 }
 
 .navbar {
@@ -65,11 +77,21 @@
   font-family: 'Alata', sans-serif;
 }
 
+.logo {
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  border: 1px solid white;
+  margin: 0 0.3rem 0 1rem;
+}
+
 .heading {
   font-family: 'Alata', sans-serif;
   color: var(--lightBlue);
 }
-
+.votedinfo{
+  font-family: 'Ubuntu', sans-serif;
+}
 .fonticons {
   background:none;
   border: none;

@@ -48,6 +48,9 @@ class VotedSec extends React.Component {
                     } )
                 }
                 </div>
+                <div>
+                    <small className="text-secondary votedinfo">{this.state.totalVote} votes</small>
+                </div>
             
             </div>
         );
