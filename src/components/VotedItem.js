@@ -1,9 +1,8 @@
 import React from 'react';
 
-class VotedItem extends React.Component {
+const VotedItem = (props) => {
 
-    render() {
-        const { option, votes, optionId, width } = this.props;
+        const { option, optionId, width } = props;
         const style ={
             background: "rgba(38,83,175,0.7)" , height: '100%',padding: '0', margin: '0', width: `${width}%`, position: 'absolute'
         }
@@ -15,7 +14,7 @@ class VotedItem extends React.Component {
 
             </div> 
         )
-    }
+    
 }
 
 export default VotedItem;

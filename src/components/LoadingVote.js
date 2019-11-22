@@ -1,6 +1,6 @@
 import React from 'react';
 
-import loadingGIF from '../loading.gif'
+import loadingGIF from '../assets/loading.gif'
 
 const LoadingVote = () => {
     

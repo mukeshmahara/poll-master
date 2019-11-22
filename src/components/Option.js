@@ -6,7 +6,7 @@ class Option extends React.Component {
         this.props.handleVote(this.props.optionId)
     }
     render() {
-        const { option, votes, optionId } = this.props;
+        const { option, optionId } = this.props;
 
         return( 
             <div key={optionId} className="option" onClick={this.handleClick}>

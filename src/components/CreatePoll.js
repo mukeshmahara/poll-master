@@ -109,7 +109,7 @@ class CreatePoll extends Component {
                                             onClick={this.handleRemoveOption(index)}
                                             className="fonticons text-danger"
                                         >
-                                        <i className="fas fa-times-circle"></i>
+                                        <i class="fas fa-minus-circle"></i>
                                         </button>
                                     </div>
                                 ))

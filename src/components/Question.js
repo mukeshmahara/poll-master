@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Question(props) { 
+const Question = (props) => { 
     return (
         <h6 className="question">
             {props.question}

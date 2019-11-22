@@ -1,8 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 
-import PollContainer from './PollContainer'
 
+import PollContainer from './PollContainer';
+import Error404 from './Error404';
 
 class Container extends React.Component {
     constructor(props) {
@@ -24,22 +25,25 @@ class Container extends React.Component {
     return (
         <div className="ContainerSec">
 
-            <div className="text-center">
-                <a href="#">Home </a>
-                <a href="#">Trending </a>
-                <a href="#">Voted </a>
+            <div className="text-center pt-3">
+                {/* Home 
+                Trending 
+                Voted  */}
+                <h1 className="heading">Polls</h1>
             </div>
             <hr />
             <div className="container-fluid">
                 <div className="row">
                     {
-                        this.state.polls.map(poll => {
-                            // console.log(poll)
-
-                            return(
-                                <PollContainer key={poll._id} id={poll._id} question={poll.question} options={poll.options} />
-                            )
-                        })
+                        ( this.state.polls.length === 0 )?
+                            <Error404 />
+                        :
+                            this.state.polls.map(poll => {
+                                // console.log(poll)
+                                return(
+                                    <PollContainer key={poll._id} id={poll._id} question={poll.question} options={poll.options} />
+                                )
+                            })
                     }
                     
                     

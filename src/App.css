@@ -56,8 +56,18 @@
   padding: 0.2rem 0 0.2rem 0;
   /* height: 2.3rem; */
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
+}
+
+.error404 {
+  width: 20rem;
+  height: 20rem;
+}
+
+.loadingTxt {
+  font-family: 'Ubuntu', sans-serif;
+
 }
 
 .loadingComp {
@@ -97,3 +107,4 @@
   border: none;
   outline: none !important;
 }
+

@@ -55,8 +55,7 @@ class OptionSec extends React.Component {
                     this.props.options.map( (option) => {
                         return (
                             <Option 
-                                option={option.option} 
-                                votes={option.votes} 
+                                option={option.option}
                                 optionId={option._id} 
                                 key={option._id} 
                                 handleVote={this.handleVote} 

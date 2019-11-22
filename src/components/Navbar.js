@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-import logo from '../pollmaster-logo.svg';
+import logo from '../assets/pollmaster-logo.svg';
 
 const Navbar = () => {
     return (
