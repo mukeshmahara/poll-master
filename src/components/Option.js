@@ -3,13 +3,14 @@ import React from 'react';
 class Option extends React.Component {
 
     handleClick = () => {
-        console.log('click handled')
+        this.props.handleVote(this.props.optionId)
     }
     render() {
-        const { option, votes, id } = this.props;
+        const { option, votes, optionId } = this.props;
 
         return( 
-            <div key={id} className="option" onClick={this.handleClick}>
+            <div key={optionId} className="option" onClick={this.handleClick}>
+                {/* {console.log(votes,'votes')} */}
                 {option}
             </div> 
         )

@@ -20,8 +20,6 @@ class Container extends React.Component {
             .catch ( (err) => { console.log(err) })
     }
     render() {
-    let optionArr = ["React", "Node", "Vue", "angular"];
-	let animeArr = ["One Piece", "Naruto"];
         // console.log(this.state.polls)
     return (
         <div className="ContainerSec">
@@ -37,8 +35,9 @@ class Container extends React.Component {
                     {
                         this.state.polls.map(poll => {
                             // console.log(poll)
+
                             return(
-                                <PollContainer key={poll._id} question={poll.question} options={poll.options} />
+                                <PollContainer key={poll._id} id={poll._id} question={poll.question} options={poll.options} />
                             )
                         })
                     }

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import axios from 'axios';
 
 import Option from './Option';
 
@@ -21,6 +21,29 @@ class OptionSec extends React.Component {
         })
     }
 
+    handleVote = (optionId) => {
+        let newOptions = this.props.options.map( (option) => {
+            if(option._id === optionId) {
+                option.votes++
+            }
+            return option;
+        });
+        // console.log(newOptions)
+        let updatedPoll = {
+            question: this.props.question,
+            options: newOptions
+        }
+        // console.log(votedOption, 'found')
+        // console.log(this.props.pollId)
+        axios.post('http://localhost:5500/poll/vote/'+this.props.pollId, updatedPoll)
+            .then(res => {
+                console.log(res.data);
+                this.props.displayVotingPercentage()
+            });
+    }
+
+
+
 	render() {
         return (
             <div className="options" >
@@ -29,13 +52,16 @@ class OptionSec extends React.Component {
                 {
                     this.props.options.map( (option) => {
                         return (
-                             <Option option={option.option} votes={option.votes} id={option._id} key={option._id}/>
+                            <Option 
+                                option={option.option} 
+                                votes={option.votes} 
+                                optionId={option._id} 
+                                key={option._id} 
+                                handleVote={this.handleVote} 
+                            />
                         )
                     } )
                 }
-                </div>
-                <div className={this.state.displayBtn?'d-block': 'd-none'}>
-                    <button >Vote</button>
                 </div>
             
             </div>
