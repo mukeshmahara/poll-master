@@ -20,15 +20,26 @@ class Container extends React.Component {
             })
             .catch ( (err) => { console.log(err) })
     }
+
+    fetchTrending = () => {
+        axios.get('http://localhost:5500/poll/trending')
+            .then (response => {
+                this.setState({ polls: response.data })
+            })
+            .catch ( (err) => { console.log(err) })
+    }
+
     render() {
         // console.log(this.state.polls)
     return (
         <div className="ContainerSec">
 
             <div className="text-center pt-3">
-                {/* Home 
-                Trending 
-                Voted  */}
+                Home 
+                <button className="btn btn-link" onClick={ this.fetchTrending }> Trending </button> 
+                Voted 
+                {/* {console.log(this.state.polls) */}
+                
                 <h1 className="heading">Polls</h1>
             </div>
             <hr />

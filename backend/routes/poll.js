@@ -6,6 +6,13 @@ router.route('/').get( (req, res) => {
     PollQuestion.find()
         .then( polls => res.json(polls) )
         .catch( err => console.log('Error: '+ err ));
+
+});
+
+router.route('/trending').get( (req, res) => {
+    PollQuestion.find().sort({ __v: -1 })
+        .then( polls => res.json(polls) )
+        .catch( err => console.log('Error: '+ err ));
 });
 
 
