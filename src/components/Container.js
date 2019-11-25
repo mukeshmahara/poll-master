@@ -14,15 +14,19 @@ class Container extends React.Component {
         }
     }
     componentDidMount () {
-        axios.get('http://localhost:5500/poll/')
+        this.fetchPoll();
+    }
+
+    fetchTrending = () => {
+        axios.get('http://localhost:5500/poll/trending')
             .then (response => {
                 this.setState({ polls: response.data })
             })
             .catch ( (err) => { console.log(err) })
     }
 
-    fetchTrending = () => {
-        axios.get('http://localhost:5500/poll/trending')
+    fetchPoll = () => {
+        axios.get('http://localhost:5500/poll/')
             .then (response => {
                 this.setState({ polls: response.data })
             })
@@ -35,12 +39,11 @@ class Container extends React.Component {
         <div className="ContainerSec">
 
             <div className="text-center pt-3">
-                Home 
+                <button className="btn btn-link" onClick={ this.fetchPoll }> Home </button>
                 <button className="btn btn-link" onClick={ this.fetchTrending }> Trending </button> 
-                Voted 
+                <button className="btn btn-link" onClick={ this.fetchTrending }> Voted </button> 
+                 
                 {/* {console.log(this.state.polls) */}
-                
-                <h1 className="heading">Polls</h1>
             </div>
             <hr />
             <div className="container-fluid">
