@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { TweenLite, TimelineLite } from 'gsap';
 
 import Navbar from './Navbar';
+import PollOption from './PollOption';
+
 
 class CreatePoll extends Component {
     constructor(props) {
@@ -14,9 +17,9 @@ class CreatePoll extends Component {
                 {option: '', votes: 0}
             ],
             error: ''
-
         }
     }
+
 
     handleQuestionInput = (event) => {
         this.setState({
@@ -93,25 +96,7 @@ class CreatePoll extends Component {
                             <label className="heading">Options:</label>
                             {
                                 this.state.options.map((option, index) => (
-                                    // className="form-inline"
-                                    <div key={index} className="form-inline mx-sm-3 mb-2">
-                                        <input
-                                            type="text"
-                                            className="form-control"
-                                            placeholder={`Option #${index + 1}`}
-                                            value={option.name}
-                                            onChange={this.handleOptionInput(index)}
-                                            required
-
-                                        />
-                                        <button
-                                            type="button"
-                                            onClick={this.handleRemoveOption(index)}
-                                            className="fonticons text-danger"
-                                        >
-                                        <i class="fas fa-minus-circle"></i>
-                                        </button>
-                                    </div>
+                                    <PollOption key={index} option={ option } index={ index } handleRemoveOption={this.handleRemoveOption} handleOptionInput ={this.handleOptionInput} />
                                 ))
                             }
                             <button
@@ -121,15 +106,15 @@ class CreatePoll extends Component {
                                 >
                                 <i className="fas fa-plus-circle"></i> Add Option
                             </button>
-                            
+
+                            <span >
                             {
-                                this.state.error ? 
-                                    <div className="alert alert-danger">
-                                        {this.state.error}
-                                    </div>
+                                this.state.error?
+                                <div className="alert alert-danger">{this.state.error}</div>
                                 :
-                                    ''
+                                ''
                             }
+                            </span>
 
                         </div>
                         <input className="btn btn-primary mt-4" type="submit" value="Add Poll" />

@@ -1,19 +1,35 @@
 import React from 'react';
+import { TweenLite } from 'gsap';
 
-const VotedItem = (props) => {
 
-        const { option, optionId, width } = props;
-        const style ={
-            background: "rgba(38,83,175,0.7)" , height: '100%',padding: '0', margin: '0', width: `${width}%`, position: 'absolute'
-        }
+
+class VotedItem extends React.Component  {
+    constructor (props) {
+        super(props);
+        
+        // reference to the DOM node
+        this.myElement = null;
+        // reference to the animation
+        this.myTween = null;
+    }
+
+    componentDidMount() {
+        // use the node ref to create the animation
+        this.myTween = TweenLite.to(this.myElement, 2, {width: `${this.props.width}%`});
+    }
+
+    render () {
+        const { option, optionId, width } = this.props;
+
         return( 
-            <div key={optionId} className="voteItem" style={{position: "relative"}}>
-                <div style={style}>
-                </div>
+            <div key={optionId} className="voteItem">
+    
+                <div className="voteBar" ref={div => this.myElement = div}></div>
+        
                 <span style={{paddingLeft: '0.5rem'}}>{Number((width).toFixed(2))}% {option}</span>
-
             </div> 
         )
+    }
     
 }
 
