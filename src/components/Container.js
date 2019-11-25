@@ -16,11 +16,15 @@ class Container extends React.Component {
     componentDidMount () {
         this.fetchPoll();
     }
-
+    shuffle = (array) => {
+        return array.sort(() => Math.random() - 0.5);
+    }
     fetchTrending = () => {
         axios.get('http://localhost:5500/poll/trending')
             .then (response => {
+                // console.log(response.data)
                 this.setState({ polls: response.data })
+
             })
             .catch ( (err) => { console.log(err) })
     }
@@ -28,7 +32,8 @@ class Container extends React.Component {
     fetchPoll = () => {
         axios.get('http://localhost:5500/poll/')
             .then (response => {
-                this.setState({ polls: response.data })
+                let shuffledPolls = this.shuffle(response.data);
+                this.setState({ polls: shuffledPolls })
             })
             .catch ( (err) => { console.log(err) })
     }
