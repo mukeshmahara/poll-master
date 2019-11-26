@@ -7,7 +7,7 @@ const Navbar = () => {
     return (
             <nav className="navbar navbar-light bg-light">
                 <NavLink to="/" exact className="navbar-brand text-light"><img src={logo} alt="Logo" className="logo" />Poll Master</NavLink>
-                <ul className="navbar-nav ml-auto pr-5">
+                <ul className="navbar-nav ml-auto pr-md-4 pr-2">
                     <li className="nav-item active">
                         <NavLink to="/create" className="nav-link text-light" title="Create a Poll">Create</NavLink>
                     </li>

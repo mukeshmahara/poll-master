@@ -46,7 +46,7 @@ class Container extends React.Component {
             <div className="text-center pt-3">
                 <button className="btn btn-link" onClick={ this.fetchPoll }> Home </button>
                 <button className="btn btn-link" onClick={ this.fetchTrending }> Trending </button> 
-                <button className="btn btn-link" onClick={ this.fetchTrending }> Voted </button> 
+                <button className="btn btn-link disabled" onClick={ this.fetchTrending }> Voted </button> 
                  
                 {/* {console.log(this.state.polls) */}
             </div>
