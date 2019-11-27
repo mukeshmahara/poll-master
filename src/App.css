@@ -35,6 +35,7 @@
   padding: 0.3rem;
   margin: 1rem;
   cursor: pointer;
+  transition: background-color 145ms ease-in;
 }
 
 .option:hover {
@@ -70,9 +71,9 @@
   border-radius: 2px;
 }
 
-.voteBar:hover {
+/* .voteBar:hover {
   width: 20%;
-}
+} */
 .error404 {
   width: 20rem;
   height: 20rem;
