@@ -18,7 +18,7 @@ const PollRouter = require('./routes/poll');
 app.use('/poll', PollRouter);
 
 
-const uri = process.env.ATLAS_URI;
+const uri = process.env.MONGOLAB_URI;
 mongoose.connect(uri, { useNewUrlParser:true, useCreateIndex:true, useUnifiedTopology:true }).catch(err => console.log(err));
 const connection = mongoose.connection;
 
