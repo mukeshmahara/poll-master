@@ -1,5 +1,8 @@
 import React from 'react';
-import { TweenLite } from 'gsap';
+import { TweenMax } from 'gsap/all';
+import CSSPlugin from 'gsap/CSSPlugin';
+
+const C = CSSPlugin;
 
 
 
@@ -15,7 +18,7 @@ class VotedItem extends React.Component  {
 
     componentDidMount() {
         // use the node ref to create the animation
-        this.myTween = TweenLite.to(this.myElement, 2, {width: `${this.props.width}%`});
+        this.myTween = TweenMax.to(this.myElement, 2, {width: `${this.props.width}%`});
     }
 
     render () {

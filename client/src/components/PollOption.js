@@ -1,5 +1,8 @@
 import React from 'react';
-import { TweenLite } from 'gsap';
+import { TweenMax } from 'gsap/all';
+import CSSPlugin from 'gsap/CSSPlugin';
+
+const C = CSSPlugin;
 
 class PollOption extends React.Component {
     constructor(props) {
@@ -12,7 +15,7 @@ class PollOption extends React.Component {
     }
     componentDidMount() {
         // use the node ref to create the animation
-        this.myTween = TweenLite.to(this.myElement, 0.5, {opacity: 1});
+        this.myTween = TweenMax.to(this.myElement, 0.5, {opacity: 1});
     }
 
     
