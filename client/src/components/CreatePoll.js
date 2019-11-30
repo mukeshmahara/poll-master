@@ -68,7 +68,7 @@ class CreatePoll extends Component {
             options: this.state.options,
         }
 
-        axios.post('https://stark-hamlet-26518.herokuapp.com/poll/add', poll)
+        axios.post('https://pollmaster-v2.herokuapp.com/poll/add', poll)
             .then(res => console.log(res.data));
 
         console.log(poll);
