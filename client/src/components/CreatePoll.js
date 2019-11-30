@@ -50,7 +50,7 @@ class CreatePoll extends Component {
         }
         else {
             this.setState({
-                error: 'You need atleast Two Options for the poll'
+                error: 'You need at least Two Options for the poll'
             })
             setTimeout(() => {
                 this.setState({
@@ -68,7 +68,7 @@ class CreatePoll extends Component {
             options: this.state.options,
         }
 
-        axios.post('http://localhost:5500/poll/add', poll)
+        axios.post('https://stark-hamlet-26518.herokuapp.com/poll/add', poll)
             .then(res => console.log(res.data));
 
         console.log(poll);

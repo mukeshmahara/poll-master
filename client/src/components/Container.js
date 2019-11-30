@@ -20,7 +20,7 @@ class Container extends React.Component {
         return array.sort(() => Math.random() - 0.5);
     }
     fetchTrending = () => {
-        axios.get('http://localhost:5500/poll/trending')
+        axios.get('https://stark-hamlet-26518.herokuapp.com/poll/trending')
             .then (response => {
                 // console.log(response.data)
                 this.setState({ polls: response.data })
@@ -30,7 +30,7 @@ class Container extends React.Component {
     }
 
     fetchPoll = () => {
-        axios.get('http://localhost:5500/poll/')
+        axios.get('https://stark-hamlet-26518.herokuapp.com/poll')
             .then (response => {
                 let shuffledPolls = this.shuffle(response.data);
                 this.setState({ polls: shuffledPolls })

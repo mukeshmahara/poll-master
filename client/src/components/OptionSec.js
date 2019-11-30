@@ -36,7 +36,7 @@ class OptionSec extends React.Component {
         }
         // console.log(votedOption, 'found')
         // console.log(this.props.pollId)
-        axios.post('http://localhost:5500/poll/vote/'+this.props.pollId, updatedPoll)
+        axios.post('https://stark-hamlet-26518.herokuapp.com/poll/vote/'+this.props.pollId, updatedPoll)
             .then(res => {
                 console.log(res.data);
                 this.props.toggleLoadVoting();

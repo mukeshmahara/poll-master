@@ -18,7 +18,7 @@ class VotedSec extends React.Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5500/poll/'+this.props.pollId)
+        axios.get('https://stark-hamlet-26518.herokuapp.com/poll/'+this.props.pollId)
             .then(response => {
                 // console.log(response.data.__v, 'totalVote')
                 
