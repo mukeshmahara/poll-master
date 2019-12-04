@@ -1,8 +1,5 @@
 import React from 'react';
 import { TweenMax } from 'gsap/all';
-import CSSPlugin from 'gsap/CSSPlugin';
-
-const C = CSSPlugin;
 
 
 
@@ -29,7 +26,7 @@ class VotedItem extends React.Component  {
     
                 <div className="voteBar" ref={div => this.myElement = div}></div>
         
-                <span style={{paddingLeft: '0.5rem'}}>{Number((width).toFixed(2))}% {option}</span>
+                <span style={{paddingLeft: '0.5rem'}}>{Number((width).toFixed())}% {option}</span>
             </div> 
         )
     }

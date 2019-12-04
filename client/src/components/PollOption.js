@@ -1,8 +1,5 @@
 import React from 'react';
 import { TweenMax } from 'gsap/all';
-import CSSPlugin from 'gsap/CSSPlugin';
-
-const C = CSSPlugin;
 
 class PollOption extends React.Component {
     constructor(props) {

@@ -13,18 +13,23 @@ class VotedSec extends React.Component {
         }
     }
     calculateWidth = (votes) => {
-        let width = ((votes / this.state.totalVote) * 100);
+        let totalVote = this.state.totalVote;
+
+        let width = ((votes / totalVote) * 100);
         return width;
     }
 
     componentDidMount() {
         axios.get('https://pollmaster-v2.herokuapp.com/poll/'+this.props.pollId)
             .then(response => {
-                // console.log(response.data.__v, 'totalVote')
-                
+                // console.log(response.data, 'option')
+                let totalVote = 0;
+                let options = response.data.options;
+                options.forEach(option => totalVote += option.votes);
+                // console.log(totalVote)
                 this.setState({
-                    options: response.data.options,
-                    totalVote: response.data.__v,
+                    options: options,
+                    totalVote: totalVote,
                 })
             }
         )
