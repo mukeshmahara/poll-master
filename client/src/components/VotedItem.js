@@ -1,5 +1,6 @@
 import React from 'react';
 import { TweenMax } from 'gsap/all';
+import CSSPlugin from 'gsap/CSSPlugin';
 
 
 
