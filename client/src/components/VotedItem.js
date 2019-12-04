@@ -3,6 +3,7 @@ import { TweenMax } from 'gsap/all';
 import CSSPlugin from 'gsap/CSSPlugin';
 
 
+const C = CSSPlugin;
 
 class VotedItem extends React.Component  {
     constructor (props) {
