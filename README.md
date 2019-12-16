@@ -22,7 +22,7 @@ The main goal of this project was to learn MERN stack and also to learn how to c
 
 
 ## Demo
-👉 live demo: <a href="http://pollmaster-v2.herokuapp.com" target="_blank" >here</a>
+👉 live demo: <a href="https://pollmaster-v2.herokuapp.com" target="_blank" >here</a>
 
 <img src="aboutapp/homescreen.png" margin="5px">
 <img src="aboutapp/createpollscreen.png" margin="5px">
